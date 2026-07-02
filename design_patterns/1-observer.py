@@ -40,8 +40,8 @@ def main():
     email_obs = EmailObserver()
     sms_obs = SmsObserver()
 
-    subject.subscribe(email_obs)
     subject.subscribe(log_obs, topics={"sports", "breaking"})
+    subject.subscribe(email_obs)
     subject.subscribe(sms_obs, topics={"breaking"})
 
     subject.notify("weather", "rain")
